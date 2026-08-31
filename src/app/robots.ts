@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://wali-portfolio.vercel.app/sitemap.xml',
+    sitemap: 'https://wali-muhammad.netlify.app/sitemap.xml',
   };
 }

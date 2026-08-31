@@ -11,7 +11,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wali-portfolio.vercel.app'),
+  metadataBase: new URL('https://wali-muhammad.netlify.app'),
   title: "Wali Muhammad — AI-Assisted Developer & Vibe Coder",
   description: "AI-Assisted Developer based in Karachi. Specializing in rapid prototyping, fullstack web products, and modern AI workflows.",
   keywords: ["AI Developer", "Web Developer", "React", "Next.js", "Vibe Coder", "Karachi", "Pakistan", "Wali Muhammad", "Fullstack Engineer", "Agentic Tools"],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://wali-portfolio.vercel.app",
+    url: "https://wali-muhammad.netlify.app",
     title: "Wali Muhammad — AI-Assisted Developer",
     description: "AI-Assisted Developer for rapid prototyping, web products, and modern workflows.",
     siteName: "Wali Muhammad Portfolio",

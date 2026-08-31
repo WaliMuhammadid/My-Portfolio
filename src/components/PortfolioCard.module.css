@@ -1,0 +1,222 @@
+.card {
+  background-color: #050505;
+  border: 1px solid #1a2e1c;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
+}
+
+.imageContainer {
+  height: 220px;
+  position: relative;
+  background-color: #020804;
+  border-bottom: 1px solid #1a2e1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card:hover .imageContainer {
+  border-bottom-color: var(--primary-accent);
+}
+
+.placeholderGraphic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(circle at center, rgba(0,255,65,0.05) 0%, transparent 70%);
+}
+
+.swirl {
+  width: 180px;
+  height: 60px;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.2), inset 0 0 15px rgba(0, 255, 65, 0.2);
+  transition: all 0.5s ease;
+}
+
+.card:hover .swirl {
+  border-color: rgba(0, 255, 65, 0.8);
+  box-shadow: 0 0 40px rgba(0, 255, 65, 0.4), inset 0 0 20px rgba(0, 255, 65, 0.4);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--primary-accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.crtOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.5) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+.scanlineBeam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00ff41;
+  box-shadow: 0 0 15px #00ff41, 0 0 30px rgba(0, 255, 65, 0.6), 0 0 45px rgba(0, 255, 65, 0.3);
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scanlineBeam::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, rgba(0, 255, 65, 0.3), transparent);
+  pointer-events: none;
+}
+
+.card:hover .scanlineBeam {
+  opacity: 1;
+  animation: sweep 2.5s linear infinite;
+  box-shadow: 0 0 20px #00ff41, 0 0 40px rgba(0, 255, 65, 0.8), 0 0 60px rgba(0, 255, 65, 0.5);
+}
+
+@keyframes sweep {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(250px); }
+}
+
+.bracketTopLeft, .bracketBottomRight {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-accent);
+  pointer-events: none;
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0.3;
+}
+
+.bracketTopLeft {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.bracketBottomRight {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.card:hover .bracketTopLeft,
+.card:hover .bracketBottomRight {
+  opacity: 1;
+  box-shadow: 0 0 15px var(--primary-accent), inset 0 0 15px var(--primary-accent);
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: auto;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #888;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.linkText {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--primary-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.card:hover .arrow {
+  transform: translateX(4px);
+}

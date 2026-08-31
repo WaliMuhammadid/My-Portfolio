@@ -1,0 +1,78 @@
+.section {
+  padding: 6rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ctaBand {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--background);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asciiWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ctaInner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 800px;
+  background: radial-gradient(circle, rgba(4,4,4,0.8) 0%, rgba(4,4,4,0) 70%);
+}
+
+.bracket {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--primary-accent);
+  margin-bottom: 2rem;
+  display: inline-block;
+  letter-spacing: 0.1em;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+.desc {
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

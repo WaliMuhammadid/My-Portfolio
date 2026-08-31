@@ -1,0 +1,218 @@
+.heroSection {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .visual {
+    margin-top: 4rem;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.greeting {
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+
+.nameHighlight {
+  color: var(--primary-accent);
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+}
+
+.textAccent {
+  color: var(--primary-accent);
+}
+
+.description {
+  color: var(--foreground);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.actionGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary-accent);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: rgba(74, 222, 128, 0.05);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-accent);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  box-shadow: 0 0 5px var(--primary-accent);
+}
+
+.visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  aspect-ratio: 16 / 10;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+}
+
+.videoWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(0, 255, 65, 0.5), transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.videoWrapper:hover::after {
+  animation: shineSweep 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes shineSweep {
+  0% { left: -150%; }
+  100% { left: 200%; }
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.35)) hue-rotate(15deg) contrast(115%);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.videoWrapper:hover {
+  box-shadow: inset 0 0 50px rgba(0, 255, 65, 0.15);
+}
+
+.videoWrapper:hover .heroVideo {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 45px rgba(0, 255, 65, 0.8)) hue-rotate(15deg) contrast(130%) brightness(1.2);
+}
+
+.crtOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.5) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+
+.videoWrapper:hover .crtOverlay {
+  opacity: 0.8;
+}
+
+.bracketTopLeft, .bracketTopRight, .bracketBottomLeft, .bracketBottomRight {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--primary-accent);
+  pointer-events: none;
+  z-index: 10;
+  transition: all 0.5s ease;
+  opacity: 0.3;
+}
+
+.bracketTopLeft { top: 15px; left: 15px; border-right: none; border-bottom: none; }
+.bracketTopRight { top: 15px; right: 15px; border-left: none; border-bottom: none; }
+.bracketBottomLeft { bottom: 15px; left: 15px; border-right: none; border-top: none; }
+.bracketBottomRight { bottom: 15px; right: 15px; border-left: none; border-top: none; }
+
+.videoWrapper:hover .bracketTopLeft,
+.videoWrapper:hover .bracketTopRight,
+.videoWrapper:hover .bracketBottomLeft,
+.videoWrapper:hover .bracketBottomRight {
+  opacity: 1;
+  box-shadow: 0 0 15px var(--primary-accent), inset 0 0 15px var(--primary-accent);
+}
+
+.codeOverlay {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: rgba(74, 222, 128, 0.5);
+  line-height: 1.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (min-width: 1024px) {
+  .codeOverlay {
+    left: -20%;
+  }
+}

@@ -1,0 +1,40 @@
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 1px dashed var(--primary-accent);
+}
+
+.node {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.node::before {
+  content: "";
+  position: absolute;
+  left: -2.35rem;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--background);
+  border: 2px solid var(--primary-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary-accent);
+}
+
+.year {
+  color: var(--primary-accent);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.content h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--foreground);
+}
+
+.content p {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+}

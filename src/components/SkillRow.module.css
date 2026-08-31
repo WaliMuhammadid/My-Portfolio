@@ -1,0 +1,136 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 4rem 0;
+  border-bottom: 1px solid #1a2e1c;
+}
+
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.visualContainer {
+  width: 100%;
+  height: 250px;
+  background-color: #020804;
+  border: 1px solid #1a2e1c;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .visualContainer {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.visualContainer:hover {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+.graphic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleGraphic {
+  width: 120px;
+  height: 120px;
+  border: 1px dashed rgba(0, 255, 65, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.1), inset 0 0 30px rgba(0, 255, 65, 0.1);
+  animation: spin 30s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerCircle {
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(0, 255, 65, 0.6);
+  border-radius: 50%;
+  animation: spin 15s linear infinite reverse;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: #a0a0a0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detailLabel {
+  font-size: 0.8rem;
+  color: var(--primary-accent);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detailValue {
+  font-size: 0.95rem;
+  color: #dddddd;
+  line-height: 1.5;
+}

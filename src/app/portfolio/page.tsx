@@ -9,12 +9,12 @@ export default function PortfolioPage() {
 
   const projects = [
     {
-      title: "Luxe Beauty",
+      title: "Society Hub",
       subtitle: "E-Commerce / Web",
       description: "Modern and responsive beauty & cosmetics web application delivering an elegant user experience with mobile-optimized performance.",
       tags: ["TypeScript", "Node.js", "E-Commerce"],
       linkText: "VIEW PROJECT",
-      linkUrl: "https://luxebeauti.netlify.app"
+      linkUrl: "https://expo.dev/artifacts/eas/EpRux4jaS888U1GI7b7UM3YdnJHQ74FNTk77qwUvt9k.apk"
     },
     {
       title: "Gym Personal Trainer",

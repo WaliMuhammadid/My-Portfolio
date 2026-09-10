@@ -20,12 +20,12 @@ const Hero = () => {
   return (
     <section className={styles.heroSection}>
       <div className={styles.container}>
-        
+
         <div className={styles.content}>
           <div className={styles.greeting}>
             Hello, I&apos;m <span className={styles.nameHighlight}>Wali Muhammad</span>
           </div>
-          
+
           <h1 className={styles.title}>
             AI-Assisted Developer<br />
             for rapid prototyping, web products,<br />
@@ -54,21 +54,21 @@ const Hero = () => {
             <div className={styles.bracketTopRight}></div>
             <div className={styles.bracketBottomLeft}></div>
             <div className={styles.bracketBottomRight}></div>
-            
+
             <div className={styles.crtOverlay}></div>
-            
-            <video 
-              src="/hero-video.mp4" 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
+
+            <video
+              src="/hero-video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className={styles.heroVideo}
             />
             <div className={styles.codeOverlay}>
               <pre>
                 <code>
-{`// spec in, PR out
+                  {`// spec in, PR out
 import { swarm } from "ralph-starter";
 
 const fleet = swarm({

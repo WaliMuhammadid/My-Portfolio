@@ -35,16 +35,18 @@ export default function PortfolioPage() {
       category: "Web",
       tags: ["TypeScript", "Next.js", "TailwindCSS"],
       linkText: "VIEW PROJECT",
-      linkUrl: "https://softadex.netlify.app"
+      linkUrl: "https://softadex.netlify.app",
+      imageUrl: "/softadex-mockup.jpg"
     },
     {
-      title: "DevOps-Networking Hub",
-      subtitle: "DevOps / Education",
-      description: "Structured educational hub for exploring foundational computer networking and DevOps pipeline concepts.",
-      category: "DevOps",
-      tags: ["Docker", "Kubernetes", "AWS"],
+      title: "Real Estate Web",
+      subtitle: "Real Estate / Web App",
+      description: "Modern real estate platform for browsing properties and managing listings.",
+      category: "Web",
+      tags: ["Next.js", "React", "TypeScript"],
       linkText: "VIEW PROJECT",
-      linkUrl: "https://devops-networking.netlify.app"
+      linkUrl: "https://real-estate-wali-muhammad.netlify.app",
+      imageUrl: "/real_estate_mockup.jpg"
     },
     {
       title: "ABC Construction",

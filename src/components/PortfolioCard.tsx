@@ -9,9 +9,10 @@ interface PortfolioCardProps {
   tags: string[];
   linkText: string;
   linkUrl?: string;
+  imageUrl?: string;
 }
 
-export default function PortfolioCard({ title, subtitle, description, tags, linkText, linkUrl }: PortfolioCardProps) {
+export default function PortfolioCard({ title, subtitle, description, tags, linkText, linkUrl, imageUrl }: PortfolioCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -31,9 +32,13 @@ export default function PortfolioCard({ title, subtitle, description, tags, link
 
       <div className={styles.imageContainer}>
         <div className={styles.scanlineBeam}></div>
-        <div className={styles.placeholderGraphic}>
-          <div className={styles.swirl}></div>
-        </div>
+        {imageUrl ? (
+          <img src={imageUrl} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        ) : (
+          <div className={styles.placeholderGraphic}>
+            <div className={styles.swirl}></div>
+          </div>
+        )}
         
         <div className={styles.badge}>[!]</div>
       </div>
